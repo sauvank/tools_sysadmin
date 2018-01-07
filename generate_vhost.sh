@@ -31,3 +31,4 @@ content="
 echo  -e ${content} >> /etc/apache2/sites-available/${urlsite}.conf
 a2ensite ${urlsite}
 service apache2 restart
+systemctl reload apache2
