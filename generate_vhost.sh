@@ -10,7 +10,8 @@ mkdir /var/log/apache2/${namesite}
 content="
 \t <VirtualHost *:80>\n
     \t\t  ServerName ${urlsite}\n
-    \t\t  ServerAlias www.${urlsite}\n
+    #for accept www. url
+    #\t\t  ServerAlias www.${urlsite}\n
 
     \t\t  DocumentRoot ${pathfolder}\n
     \t\t  <Directory ${pathfolder}>\n
@@ -23,8 +24,8 @@ content="
     \t\t  CustomLog /var/log/apache2/${namesite}/access.log combined\n
     \t\t  RewriteEngine On\n
     \t\t  # force redirect no www to wwww\n
-    \t\t  RewriteCond %{HTTP_HOST} !^www\. [NC]\n
-    \t\t  RewriteRule ^(.*)$ http://www.%{HTTP_HOST}%{REQUEST_URI} [R=301,L]\n
+   # \t\t  RewriteCond %{HTTP_HOST} !^www\. [NC]\n
+   # \t\t  RewriteRule ^(.*)$ http://www.%{HTTP_HOST}%{REQUEST_URI} [R=301,L]\n
 \t </VirtualHost>\n"
 
 
