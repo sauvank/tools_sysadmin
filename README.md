@@ -18,7 +18,9 @@ exemple : ./generate_vhost.sh google google.fr /var/www/html/google/
 </p>
 
 
-Apache2 + nodejs
+## Apache2 + nodejs
+
+1: sudo a2enmod proxy proxy_http
 
 to the sites-available file :
 
@@ -43,3 +45,5 @@ to the sites-available file :
                  CustomLog /var/log/apache2/access.log combined
 
     </VirtualHost>
+    
+    
